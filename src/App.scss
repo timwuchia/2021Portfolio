@@ -1,0 +1,194 @@
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1rem;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+// header section
+
+header {
+  max-width: 100%;
+}
+.hamburger-react {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  header {
+    .hamburger-react {
+      z-index: 999;
+      display: block;
+    }
+    nav {
+      position: fixed;
+      height: 100%;
+      right: -100%;
+      width: 100%;
+      top: 0;
+      transition: right 0.5s ease 0s;
+      z-index: 99;
+      background-color: green;
+      ul {
+        padding-top: 3rem;
+        flex-direction: column;
+        align-items: center;
+        li {
+          margin-bottom: 1.5rem;
+        }
+      }
+      &.mobile-menu-show {
+        right: 0;
+      }
+    }
+  }
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100vh - 103px);
+}
+
+p {
+  &.p-sm {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  p {
+    font-size: 1.75rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  // this is where mobile nav turns to desktop nav
+  p {
+    font-size: 2.25rem;
+    &.p-sm {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  p {
+    font-size: 2.75rem;
+    &.p-sm {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  p {
+    font-size: 3.25rem;
+    &.p-sm {
+      font-size: 2rem;
+    }
+  }
+}
+
+.container {
+  max-width: 1180px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media screen and (max-width: 350px) {
+  nav ul li a {
+    font-size: 0.75rem;
+  }
+}
+
+header {
+  .logo {
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  nav {
+    ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      li {
+        &:not(:last-child) {
+          margin-right: 1rem;
+        }
+        a {
+          color: #fff;
+          text-decoration: none;
+          position: relative;
+          padding-bottom: 0.5rem;
+          &:after {
+            background: none repeat scroll 0 0 transparent;
+            bottom: 0;
+            content: "";
+            display: block;
+            height: 2px;
+            left: 50%;
+            position: absolute;
+            background: #fff;
+            transition: width 0.5s ease 0s, left 0.5s ease 0s;
+            width: 0;
+          }
+          &:hover:after {
+            width: 100%;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.work-page {
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #fff;
+  }
+  .swiper-pagination {
+    bottom: -2rem !important;
+    .swiper-pagination-bullet {
+      color: #fff;
+    }
+    .swiper-pagination-bullet-active {
+      background-color: #fff;
+    }
+  }
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    img {
+      width: 600px;
+      height: auto;
+    }
+  }
+}
