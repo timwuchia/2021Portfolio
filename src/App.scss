@@ -4,6 +4,16 @@ body {
   font-family: "IBM Plex Mono", monospace;
   font-size: 1rem;
   margin: 0;
+  overflow-x: hidden;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
 }
 
 h1,
@@ -41,7 +51,7 @@ header {
       top: 0;
       transition: right 0.5s ease 0s;
       z-index: 99;
-      background-color: green;
+      background-color: #333333;
       ul {
         padding-top: 3rem;
         flex-direction: column;
@@ -61,7 +71,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: calc(100vh - 103px);
+  min-height: calc(100vh - 103px);
 }
 
 p {
@@ -113,6 +123,7 @@ p {
   margin-left: auto;
   padding-right: 15px;
   padding-left: 15px;
+  width: 100%;
 }
 
 @media screen and (max-width: 350px) {
@@ -191,4 +202,27 @@ header {
       height: auto;
     }
   }
+}
+
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  p {
+    font-size: 1rem;
+  }
+}
+
+.card {
+  flex: 0 0 28%;
+  margin-bottom: 1rem;
+  @media screen and (max-width: 992px) {
+    flex: 0 0 45%;
+  }
+  @media screen and (max-width: 768px) {
+    flex: 0 0 100%;
+  }
+  padding: 1rem;
+  border: 1px solid #fff;
+  border-radius: 5px;
 }
